@@ -20,24 +20,24 @@ public class DropTimer {
                 count--;
 
                 if (count == 60) {
-                    Bukkit.broadcastMessage("" + ChatColor.AQUA + ChatColor.BOLD + "[" + ChatColor.RED + ChatColor.BOLD + "!" + ChatColor.AQUA + ChatColor.BOLD + "]" + ChatColor.AQUA + " Todos os drops serão limpos em " + ChatColor.RED + ChatColor.BOLD + count + " segundos.");
+                    Bukkit.broadcastMessage(ConfigManager.clear_drops_message.replace("$s", count.toString()));
                 }
 
                 if (count == 30) {
-                    Bukkit.broadcastMessage("" + ChatColor.AQUA + ChatColor.BOLD + "[" + ChatColor.RED + ChatColor.BOLD + "!" + ChatColor.AQUA + ChatColor.BOLD + "]" + ChatColor.AQUA + " Todos os drops serão limpos em " + ChatColor.RED + ChatColor.BOLD + count + " segundos.");
+                    Bukkit.broadcastMessage(ConfigManager.clear_drops_message.replace("$s", count.toString()));
                 }
 
                 if (count == 15) {
-                    Bukkit.broadcastMessage("" + ChatColor.AQUA + ChatColor.BOLD + "[" + ChatColor.RED + ChatColor.BOLD + "!" + ChatColor.AQUA + ChatColor.BOLD + "]" + ChatColor.AQUA + " Todos os drops serão limpos em " + ChatColor.RED + ChatColor.BOLD + count + " segundos.");
+                    Bukkit.broadcastMessage(ConfigManager.clear_drops_message.replace("$s", count.toString()));
                 }
 
                 if (count == 5) {
-                    Bukkit.broadcastMessage("" + ChatColor.AQUA + ChatColor.BOLD + "[" + ChatColor.RED + ChatColor.BOLD + "!" + ChatColor.AQUA + ChatColor.BOLD + "]" + ChatColor.AQUA + " Todos os drops serão limpos em " + ChatColor.RED + ChatColor.BOLD + count + " segundos.");
+                    Bukkit.broadcastMessage(ConfigManager.clear_drops_message.replace("$s", count.toString()));
                 }
 
                 if (count <= 0) {
                     this.cancel();
-                    Bukkit.broadcastMessage(ConfigManager.clear_drops_message.replace("$s", count.toString()));
+                    Bukkit.broadcastMessage(ConfigManager.clear_drops_message_2);
                     Bukkit.getLogger().info("[MagiUtils] Foram removidos " + RestartTimer.item_amount + " drops do chão.");
                     RestartTimer.item_amount = 0;
                     for (Item i : RestartTimer.items) {

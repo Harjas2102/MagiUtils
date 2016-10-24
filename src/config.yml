@@ -3,26 +3,26 @@
 #| Configurações de Restart |
 #|--------------------------|
 
-# Defina abaixo o nome do mundo para as checagens
+# Defina abaixo o nome do mundo para as checagens.
 # Padrão: world
 world_name: 'world'
 
-# Defina abaixo o comando para ser executado para reiniciar
+# Defina abaixo o comando para ser executado para reiniciar.
 # NÃO UTILIZE BARRA (/).
 # Padrão: asw restart
 command: 'asw restart'
 
-# Abaixo defina a quantidade em ticks para a checagem do tps e reinicio
-# Padrão: 12000 ( 10 minutos, 20*60*10 )
+# Abaixo defina a quantidade em ticks para a checagem do tps e reinicio.
+# Padrão: 12000 ( 10 minutos, 20*60*10 ).
 restart_tick: 12000
 
 # Abaixo defina se ira ocorrer a limpeza de drops e a quantidade minima ( quando detectar tps baixo ).
 # Isto serve para que se o lag for devido a items dropados, se eles forem removidos o tps voltara ficar maior que 16.
-# Padrão: clear_drops: true | clear_drops_amount: 1000 ( ele checara e se o valor for maior ou igual a mil ele limpara )
+# Padrão: clear_drops: true | clear_drops_amount: 1000 ( ele checara e se o valor for maior ou igual a mil ele limpara ).
 clear_drops: true
 clear_drops_amount: 1000
 
-# Abaixo defina se ira ocorrer a limpeza de LivingEntities por chunk e a quantidade minima ( quando detectar tps baixo )>
+# Abaixo defina se ira ocorrer a limpeza de LivingEntities por chunk e a quantidade minima ( quando detectar tps baixo ).
 # Isto serve para que se o lag for devido a entidiaddes, se eles forem removidos o tps voltara ficar maior que 16.
 clear_chunk_entities: true
 clear_chunk_entities_amount: 120
@@ -30,12 +30,14 @@ clear_chunk_entities_amount: 120
 #|--------------------------|
 #|        MENSAGENS         |
 #|--------------------------|
-# Você pode utilizar codigo de cores como &4 para vermelho
+# Você pode utilizar codigo de cores como &4 para vermelho.
 
-# Defina a mensagem para a limpeza de drops.
+# Defina as mensagens para a limpeza de drops.
 # Variaveis: $s = segundos restantes
 # Padrao: &b[&c&l!&b] Limpando os drops em &c&l$s segundos&b.
+# Padrao: &b[&c&l!&b] Todos os drops foram limpos.
 clear_drops_message: '&b[&c&l!&b] Limpando os drops em &c&l$s segundos&b.'
+clear_drops_message_2: '&b[&c&l!&b] Todos os drops foram limpos.'
 
 
 # **** Fim das configurações ****

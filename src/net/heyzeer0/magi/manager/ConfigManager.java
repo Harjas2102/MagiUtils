@@ -11,6 +11,7 @@ public class ConfigManager {
     public static boolean clear_drops = true;
     public static Integer clear_drops_amount = 1000;
     public static String clear_drops_message = "§b[§c§l!§b] Limpando os drops em §c§l$s segundos§b.";
+    public static String clear_drops_message_2 = "§b[§c§l!§b] Todos os drops foram limpos.";
 
     public static String world_name = "world";
     public static String command = "asw restart";
@@ -23,6 +24,7 @@ public class ConfigManager {
         clear_drops = Main.main.getConfig().getBoolean("clear_drops");
         clear_drops_amount = Main.main.getConfig().getInt("clear_drops_amount");
         clear_drops_message = Main.main.getConfig().getString("clear_drops_message").replace("&", "§");
+        clear_drops_message_2 = Main.main.getConfig().getString("clear_drops_message_2").replace("&", "§");
         clear_chunk_entities = Main.main.getConfig().getBoolean("clear_chunk_entities");
         clear_chunk_entities_amount = Main.main.getConfig().getInt("clear_chunk_entities_amount");
 
