@@ -1,21 +1,26 @@
-# **** MagiUtils by HeyZeer0 ****
-#
-#
-# Configurações de Restart
-#
+
+#|--------------------------|
+#| Configurações de Restart |
+#|--------------------------|
+
 # Defina abaixo o nome do mundo para as checagens
 # Padrão: world
 world_name: world
-#
+
 # Abaixo defina a quantidade em ticks para a checagem do tps e reinicio
 # Padrão: 12000 ( 10 minutos, 20*60*10 )
 restart_tick: 12000
+
 # Abaixo defina se ira ocorrer a limpeza de drops e a quantidade minima ( quando detectar tps baixo ).
 # Isto serve para que se o lag for devido a items dropados, se eles forem removidos o tps voltara ficar maior que 16.
 # Padrão: clear_drops: true | clear_drops_amount: 1000 ( ele checara e se o valor for maior ou igual a mil ele limpara )
 clear_drops: true
 clear_drops_amount: 1000
-#
-#
-#
+
+# Abaixo defina se ira ocorrer a limpeza de LivingEntities por chunk e a quantidade minima ( quando detectar tps baixo )>
+# Isto serve para que se o lag for devido a entidiaddes, se eles forem removidos o tps voltara ficar maior que 16.
+clear_chunk_entities: true
+clear_chunk_entities_amount: 120
+
+
 # **** Fim das configurações ****

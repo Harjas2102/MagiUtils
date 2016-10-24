@@ -5,8 +5,11 @@ import net.heyzeer0.magi.Main;
 import net.heyzeer0.magi.manager.ConfigManager;
 import net.minecraft.server.v1_7_R4.MinecraftServer;
 import org.bukkit.Bukkit;
+import org.bukkit.Chunk;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Item;
+import org.bukkit.entity.LivingEntity;
+import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.ArrayList;
@@ -40,6 +43,24 @@ public class RestartTimer {
                             item_amount = 0;
                         }
                     }
+
+                    if(ConfigManager.clear_chunk_entities) {
+                        for(Chunk k : Bukkit.getWorld(ConfigManager.world_name).getLoadedChunks()) {
+                            if(k.getEntities().length >= ConfigManager.clear_chunk_entities_amount) {
+                                for(Entity i : k.getEntities()) {
+                                    if(!(i instanceof Player)) {
+                                        if(i instanceof LivingEntity) {
+                                            if(((LivingEntity)i).getCustomName() == null || ((LivingEntity)i).getCustomName() != "") {
+                                                i.remove();
+                                            }
+                                        }
+                                    }
+                                }
+                                Bukkit.getLogger().info("[MagiUtils] Foram removidos " + k.getEntities().length + " entidades da chunk X: " + k.getX() + " Z: " + k.getZ());
+                            }
+                        }
+                    }
+
                     startSecondCountdown();
                 }
 
