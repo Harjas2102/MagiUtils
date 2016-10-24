@@ -35,9 +35,9 @@ public class RestartTimer {
                             for(Item i : items) {
                                 i.remove();
                             }
+                            Bukkit.getLogger().info("[MagiUtils] Foram removidos " + item_amount + " items do chão.");
                             items.clear();
                             item_amount = 0;
-                            Bukkit.getLogger().info("[MagiUtils] Foram removidos " + item_amount + " items do chão.");
                         }
                     }
                     startSecondCountdown();
