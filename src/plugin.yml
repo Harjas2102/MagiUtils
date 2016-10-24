@@ -1,0 +1,7 @@
+name: MagiUtils
+version: 1.0
+author: HeyZeer0
+main: net.heyzeer0.magi.Main
+commands:
+  magireload:
+     description: Faça reaload na config do plugin.

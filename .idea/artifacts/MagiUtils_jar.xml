@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="MagiUtils:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/MagiUtils_jar</output-path>
+    <root id="archive" name="MagiUtils.jar">
+      <element id="module-output" name="MagiUtils" />
+    </root>
+  </artifact>
+</component>
