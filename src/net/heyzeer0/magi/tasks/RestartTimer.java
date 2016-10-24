@@ -16,8 +16,8 @@ import java.util.ArrayList;
  */
 public class RestartTimer {
 
-    public static ArrayList<Item> items = new ArrayList<Item>();
-    static Integer item_amount = 0;
+    private static ArrayList<Item> items = new ArrayList<>();
+    private static Integer item_amount = 0;
 
     public static void startRestartCountdown() {
         new BukkitRunnable() {
@@ -35,6 +35,8 @@ public class RestartTimer {
                             for(Item i : items) {
                                 i.remove();
                             }
+                            items.clear();
+                            item_amount = 0;
                             Bukkit.getLogger().info("[MagiUtils] Foram removidos " + item_amount + " items do chão.");
                         }
                     }
@@ -49,7 +51,7 @@ public class RestartTimer {
         new BukkitRunnable() {
             public void run() {
 
-                if(TPSCount.tps <= 16) {
+                if(MinecraftServer.getServer().recentTps[0] <= 16.0) {
                     Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "asw restart");
                 }else{
                     startRestartCountdown();
