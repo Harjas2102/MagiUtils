@@ -23,7 +23,7 @@ clear_drops: true
 clear_drops_amount: 1000
 
 # Abaixo defina se ira ocorrer a limpeza de LivingEntities por chunk e a quantidade minima ( quando detectar tps baixo ).
-# Isto serve para que se o lag for devido a entidiaddes, se eles forem removidos o tps voltara ficar maior que 16.
+# Isto serve para que se o lag for devido a entidades, se eles forem removidos o tps voltara ficar maior que 16.
 clear_chunk_entities: true
 clear_chunk_entities_amount: 120
 
