@@ -5,3 +5,5 @@ main: net.heyzeer0.magi.Main
 commands:
   magireload:
      description: Faça reaload na config do plugin.
+  chunkdebug:
+     description: Faça um chunk debug.

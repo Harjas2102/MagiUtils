@@ -19,8 +19,8 @@ import java.util.ArrayList;
  */
 public class RestartTimer {
 
-    private static ArrayList<Item> items = new ArrayList<>();
-    private static Integer item_amount = 0;
+    public static ArrayList<Item> items = new ArrayList<>();
+    public static Integer item_amount = 0;
 
     public static void startRestartCountdown() {
         new BukkitRunnable() {
@@ -35,12 +35,7 @@ public class RestartTimer {
                             }
                         }
                         if(items != null && ConfigManager.clear_drops_amount >= item_amount) {
-                            for(Item i : items) {
-                                i.remove();
-                            }
-                            Bukkit.getLogger().info("[MagiUtils] Foram removidos " + item_amount + " items do chão.");
-                            items.clear();
-                            item_amount = 0;
+                            DropTimer.startCounting();
                         }
                     }
 
@@ -79,7 +74,7 @@ public class RestartTimer {
                 }
 
             }
-        }.runTaskLater(Main.main, 1200);
+        }.runTaskLater(Main.main, 6000);
     }
 
 
