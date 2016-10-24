@@ -68,7 +68,7 @@ public class RestartTimer {
             public void run() {
 
                 if(MinecraftServer.getServer().recentTps[0] <= 16.0) {
-                    Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "asw restart");
+                    Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), ConfigManager.command);
                 }else{
                     startRestartCountdown();
                 }

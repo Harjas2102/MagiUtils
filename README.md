@@ -5,6 +5,7 @@
 - [x] Drop cleaner on low TPS.
 - [x] Per chunk entity clear on low TPS.
 - [x] Chunk debug.
+- [x] Simple configuration.
 
 | Command | Permission | Description |
 | --- | --- | --- |
