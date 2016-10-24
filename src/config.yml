@@ -3,7 +3,7 @@
 #
 # Configurações de Restart
 #
-# Defina abaixo o nome do mundo para as checagems
+# Defina abaixo o nome do mundo para as checagens
 # Padrão: world
 world_name: world
 #
