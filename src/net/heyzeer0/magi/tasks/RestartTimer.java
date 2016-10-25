@@ -57,6 +57,8 @@ public class RestartTimer {
                     }
 
                     startSecondCountdown();
+                }else{
+                    startRestartCountdown();
                 }
 
             }
