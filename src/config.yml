@@ -12,6 +12,10 @@ world_name: 'world'
 # Padrão: asw restart
 command: 'asw restart'
 
+# Defina abaixo o valor minimo de tps.
+# Padrão: world
+min_tps: 20.0
+
 # Abaixo defina a quantidade em ticks para a checagem do tps e reinicio.
 # Padrão: 12000 ( 10 minutos, 20*60*10 ).
 restart_tick: 12000

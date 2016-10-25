@@ -26,7 +26,7 @@ public class RestartTimer {
         new BukkitRunnable() {
             public void run() {
 
-                if(MinecraftServer.getServer().recentTps[0] <= 16.0) {
+                if(MinecraftServer.getServer().recentTps[0] <= ConfigManager.min_tps) {
                     if(ConfigManager.clear_drops) {
                         for(Entity i : Bukkit.getWorld(ConfigManager.world_name).getEntities()) {
                             if(i instanceof Item) {
@@ -69,7 +69,7 @@ public class RestartTimer {
         new BukkitRunnable() {
             public void run() {
 
-                if(MinecraftServer.getServer().recentTps[0] <= 16.0) {
+                if(MinecraftServer.getServer().recentTps[0] <= ConfigManager.min_tps) {
                     Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), ConfigManager.command);
                 }else{
                     startRestartCountdown();

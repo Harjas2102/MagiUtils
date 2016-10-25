@@ -18,6 +18,8 @@ public class ConfigManager {
     public static boolean clear_chunk_entities = true;
     public static Integer clear_chunk_entities_amount = 200;
 
+    public static double min_tps = 16.0;
+
     public static void loadConfig() {
         check_restart = Main.main.getConfig().getInt("restart_tick");
         world_name = Main.main.getConfig().getString("world_name");
@@ -29,6 +31,7 @@ public class ConfigManager {
         clear_chunk_entities_amount = Main.main.getConfig().getInt("clear_chunk_entities_amount");
 
         command = Main.main.getConfig().getString("command");
+        min_tps = Main.main.getConfig().getDouble("min_tps");
 
     }
 
