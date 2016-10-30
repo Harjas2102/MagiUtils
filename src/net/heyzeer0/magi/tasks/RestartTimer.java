@@ -22,7 +22,7 @@ public class RestartTimer {
         new BukkitRunnable() {
             public void run() {
 
-                if((Math.round(Lag.getTPS() * 100.0D) / 100.0D) <= ConfigManager.min_tps) {
+                if(Math.round(Lag.getTPS() * 100.0D) / 100.0D <= ConfigManager.min_tps) {
                     if(ConfigManager.clear_drops) {
                         for(Entity i : Bukkit.getWorld(ConfigManager.world_name).getEntities()) {
                             if(i instanceof Item) {
@@ -65,7 +65,7 @@ public class RestartTimer {
         new BukkitRunnable() {
             public void run() {
 
-                if((Math.round(Lag.getTPS() * 100.0D) / 100.0D) <= ConfigManager.min_tps) {
+                if(Math.round(Lag.getTPS() * 100.0D) / 100.0D <= ConfigManager.min_tps) {
                     Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), ConfigManager.command);
                 }else{
                     startRestartCountdown();

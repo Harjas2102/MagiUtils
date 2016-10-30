@@ -1,5 +1,7 @@
 package net.heyzeer0.magi.manager;
 
+import org.bukkit.Bukkit;
+
 /**
  * Created by HeyZeer0 on 30/10/2016.
  */
