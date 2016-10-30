@@ -22,7 +22,7 @@ public class RestartTimer {
         new BukkitRunnable() {
             public void run() {
 
-                if(Math.round(Lag.getTPS() * 100.0D) / 100.0D <= ConfigManager.min_tps) {
+                if(Lag.getRoundTPS() <= ConfigManager.min_tps) {
                     if(ConfigManager.clear_drops) {
                         for(Entity i : Bukkit.getWorld(ConfigManager.world_name).getEntities()) {
                             if(i instanceof Item) {
@@ -47,7 +47,7 @@ public class RestartTimer {
                                         }
                                     }
                                 }
-                                Bukkit.getLogger().info("[MagiUtils] Foram removidos " + k.getEntities().length + " entidades da chunk X: " + k.getX() + " Z: " + k.getZ());
+                                Bukkit.getLogger().info("[MagiUtils] Foram removidos " + k.getEntities().length + " entidades do chunk X: " + k.getX() + " Z: " + k.getZ());
                             }
                         }
                     }
@@ -65,7 +65,7 @@ public class RestartTimer {
         new BukkitRunnable() {
             public void run() {
 
-                if(Math.round(Lag.getTPS() * 100.0D) / 100.0D <= ConfigManager.min_tps) {
+                if(Lag.getRoundTPS() <= ConfigManager.min_tps) {
                     Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), ConfigManager.command);
                 }else{
                     startRestartCountdown();

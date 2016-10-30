@@ -28,7 +28,6 @@ public class Main extends JavaPlugin {
 
         registerTasks();
 
-
         getCommand("magireload").setExecutor(new ComandoReload());
         getCommand("chunkdebug").setExecutor(new ComandoChunkDebug());
         getCommand("tpsinfo").setExecutor(new ComandoTPSInfo());

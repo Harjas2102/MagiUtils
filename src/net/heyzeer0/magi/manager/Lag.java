@@ -16,6 +16,10 @@ public class Lag implements Runnable {
         return getTPS(100);
     }
 
+    public static double getRoundTPS() {
+        return Math.round(getTPS(100) * 100.0D) / 100.0D;
+    }
+
     private static double getTPS(int ticks)
     {
         if (TICK_COUNT< ticks) {
