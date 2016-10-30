@@ -6,10 +6,7 @@ import net.heyzeer0.magi.manager.ConfigManager;
 import net.minecraft.server.v1_7_R4.MinecraftServer;
 import org.bukkit.Bukkit;
 import org.bukkit.Chunk;
-import org.bukkit.entity.Entity;
-import org.bukkit.entity.Item;
-import org.bukkit.entity.LivingEntity;
-import org.bukkit.entity.Player;
+import org.bukkit.entity.*;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.ArrayList;
@@ -44,7 +41,7 @@ public class RestartTimer {
                             if(k.getEntities().length >= ConfigManager.clear_chunk_entities_amount) {
                                 for(Entity i : k.getEntities()) {
                                     if(!(i instanceof Player)) {
-                                        if(i instanceof LivingEntity) {
+                                        if(i instanceof LivingEntity && !(i instanceof Minecart)) {
                                             if(((LivingEntity)i).getCustomName() == null || ((LivingEntity)i).getCustomName() != "") {
                                                 i.remove();
                                             }

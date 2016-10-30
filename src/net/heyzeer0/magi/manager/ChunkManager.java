@@ -34,26 +34,38 @@ public class ChunkManager {
 
     public static void broadcastList() {
         if(loaded != null) {
+            //System.out.println(" ");
+            //System.out.println(" ");
+            //System.out.println(" ");
+            //System.out.println("CHUNK LOADED:");
             LogManager.logToFile("CHUNK LOADED:");
             LogManager.logToFile("#Format = X: $x Z= $z [$loaded_amount] [$unloaded_amount]");
             LogManager.logToFile(" ");
             for(Chunk k : loaded.keySet()) {
                 if(unloaded.containsKey(k)) {
                     LogManager.logToFile("Chunk loaded: X: " + k.getX() + " Z: " + k.getZ() + " [ " + loaded.get(k) + " ]" + " [ " + unloaded.get(k) + " ]");
+                    //System.out.println("Chunk loaded: X: " + k.getX() + " Z: " + k.getZ() + " [ " + loaded.get(k) + " ]" + " [ " + unloaded.get(k) + " ]");
                     unloaded.remove(k);
                 }else{
+                    //System.out.println("Chunk loaded: X: " + k.getX() + " Z: " + k.getZ() + " [ " + loaded.get(k) + " ]" + " [ 0 ]");
                     LogManager.logToFile("Chunk loaded: X: " + k.getX() + " Z: " + k.getZ() + " [ " + loaded.get(k) + " ]" + " [ 0 ]");
                 }
 
             }
         }
         if(unloaded != null) {
+            //System.out.println(" ");
+            //System.out.println("Chunk unloaded:");
             LogManager.logToFile(" ");
             LogManager.logToFile("Chunk unloaded:");
             LogManager.logToFile("#Format = X: $x Z= $z [$unloaded]");
             for(Chunk k : unloaded.keySet()) {
                 LogManager.logToFile("Chunk unloaded: X: " + k.getX() + " Z: " + k.getZ() + " [ " + unloaded.get(k) + " ]");
+                //System.out.println("Chunk unloaded: X: " + k.getX() + " Z: " + k.getZ() + " [ " + unloaded.get(k) + " ]");
             }
+            //System.out.println(" ");
+            //System.out.println(" ");
+            //System.out.println(" ");
         }
 
         Bukkit.getLogger().info("  ");

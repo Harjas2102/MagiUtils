@@ -3,6 +3,7 @@ package net.heyzeer0.magi;
 import net.heyzeer0.magi.comandos.ComandoChunkDebug;
 import net.heyzeer0.magi.comandos.ComandoReload;
 import net.heyzeer0.magi.eventos.ChunkEvent;
+import net.heyzeer0.magi.manager.ChunkManager;
 import net.heyzeer0.magi.manager.ConfigManager;
 import net.heyzeer0.magi.tasks.RestartTimer;
 import org.bukkit.Bukkit;
@@ -30,6 +31,7 @@ public class Main extends JavaPlugin {
         getCommand("chunkdebug").setExecutor(new ComandoChunkDebug());
 
         Bukkit.getPluginManager().registerEvents(new ChunkEvent(), this);
+        ChunkManager.task();
     }
 
     public void registerTasks() {
