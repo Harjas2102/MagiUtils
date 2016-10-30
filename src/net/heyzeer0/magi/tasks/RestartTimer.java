@@ -1,9 +1,8 @@
 package net.heyzeer0.magi.tasks;
 
-import jdk.nashorn.internal.runtime.regexp.joni.Config;
 import net.heyzeer0.magi.Main;
 import net.heyzeer0.magi.manager.ConfigManager;
-import net.minecraft.server.v1_7_R4.MinecraftServer;
+import net.heyzeer0.magi.manager.Lag;
 import org.bukkit.Bukkit;
 import org.bukkit.Chunk;
 import org.bukkit.entity.*;
@@ -23,7 +22,7 @@ public class RestartTimer {
         new BukkitRunnable() {
             public void run() {
 
-                if(MinecraftServer.getServer().recentTps[0] <= ConfigManager.min_tps) {
+                if((Math.round(Lag.getTPS() * 100.0D) / 100.0D) <= ConfigManager.min_tps) {
                     if(ConfigManager.clear_drops) {
                         for(Entity i : Bukkit.getWorld(ConfigManager.world_name).getEntities()) {
                             if(i instanceof Item) {
@@ -66,7 +65,7 @@ public class RestartTimer {
         new BukkitRunnable() {
             public void run() {
 
-                if(MinecraftServer.getServer().recentTps[0] <= ConfigManager.min_tps) {
+                if((Math.round(Lag.getTPS() * 100.0D) / 100.0D) <= ConfigManager.min_tps) {
                     Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), ConfigManager.command);
                 }else{
                     startRestartCountdown();

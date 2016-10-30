@@ -1,7 +1,7 @@
 package net.heyzeer0.magi.comandos;
 
 import net.heyzeer0.magi.manager.ConfigManager;
-import net.minecraft.server.v1_7_R4.MinecraftServer;
+import net.heyzeer0.magi.manager.Lag;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -30,7 +30,7 @@ public class ComandoTPSInfo implements CommandExecutor {
 
 
             sender.sendMessage(" ");
-            sender.sendMessage(ChatColor.GREEN + "TPS: " + ChatColor.GRAY + (int)MinecraftServer.getServer().recentTps[0] + "," + ChatColor.GRAY + (int)MinecraftServer.getServer().recentTps[1] + "," + ChatColor.GRAY + (int)MinecraftServer.getServer().recentTps[2] + ".");
+            sender.sendMessage(ChatColor.GREEN + "TPS: " + ChatColor.GRAY + (Math.round(Lag.getTPS() * 100.0D) / 100.0D) + ".");
             sender.sendMessage(" ");
             sender.sendMessage(ChatColor.GREEN + "Chunks carregadas: " + ChatColor.GRAY + Bukkit.getWorld(ConfigManager.world_name).getLoadedChunks().length + ".");
 
@@ -39,7 +39,7 @@ public class ComandoTPSInfo implements CommandExecutor {
                     items++;
                 }
                 if(i instanceof LivingEntity) {
-
+                    entidades++;
                 }
             }
 

@@ -25,7 +25,7 @@ public class ComandoReload implements CommandExecutor {
             Bukkit.getServer().getScheduler().cancelTasks(Main.main);
             try{
                 ConfigManager.loadConfig();
-                RestartTimer.startRestartCountdown();
+                Main.registerTasks();
                 sender.sendMessage(ChatColor.GREEN + "Configs carregadas com sucesso, todas as tasks foram reiniciadas.");
             }catch(Exception e) {
                 RestartTimer.startRestartCountdown();

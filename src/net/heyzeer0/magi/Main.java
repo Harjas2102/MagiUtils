@@ -6,6 +6,7 @@ import net.heyzeer0.magi.comandos.ComandoTPSInfo;
 import net.heyzeer0.magi.eventos.ChunkEvent;
 import net.heyzeer0.magi.manager.ChunkManager;
 import net.heyzeer0.magi.manager.ConfigManager;
+import net.heyzeer0.magi.manager.Lag;
 import net.heyzeer0.magi.tasks.RestartTimer;
 import org.bukkit.Bukkit;
 import org.bukkit.event.HandlerList;
@@ -36,8 +37,9 @@ public class Main extends JavaPlugin {
         ChunkManager.task();
     }
 
-    public void registerTasks() {
+    public static void registerTasks() {
         RestartTimer.startRestartCountdown();
+        Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(main, new Lag(), 100L, 1L);
     }
 
     public void onDisable() {
