@@ -2,6 +2,7 @@ package net.heyzeer0.magi;
 
 import net.heyzeer0.magi.comandos.ComandoChunkDebug;
 import net.heyzeer0.magi.comandos.ComandoReload;
+import net.heyzeer0.magi.comandos.ComandoTPSInfo;
 import net.heyzeer0.magi.eventos.ChunkEvent;
 import net.heyzeer0.magi.manager.ChunkManager;
 import net.heyzeer0.magi.manager.ConfigManager;
@@ -29,6 +30,7 @@ public class Main extends JavaPlugin {
 
         getCommand("magireload").setExecutor(new ComandoReload());
         getCommand("chunkdebug").setExecutor(new ComandoChunkDebug());
+        getCommand("tpsinfo").setExecutor(new ComandoTPSInfo());
 
         Bukkit.getPluginManager().registerEvents(new ChunkEvent(), this);
         ChunkManager.task();

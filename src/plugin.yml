@@ -7,3 +7,5 @@ commands:
      description: Faça reaload na config do plugin.
   chunkdebug:
      description: Faça um chunk debug.
+  tpsinfo:
+     description: Veja informaçoes sobre o tps.

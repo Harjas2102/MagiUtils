@@ -11,5 +11,6 @@
 | --- | --- | --- |
 | /magireload | magiutils.reloadconfig | Reload configuration and restart tasks |
 | /chunkdebug | only console | Do a chunk debug |
+| /tpsinfo | magiutils.tpsinfo | Shows information about TPS |
 
 Download link: http://www.heyzeer0.tk/magiutils.php
