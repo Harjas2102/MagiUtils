@@ -24,13 +24,11 @@ public class ComandoTPSInfo implements CommandExecutor {
                 sender.sendMessage(ChatColor.RED + "Você não posssui permissão para realizar este comando.");
                 return true;
             }
-
             Integer items = 0;
             Integer entidades = 0;
 
-
             sender.sendMessage(" ");
-            sender.sendMessage(ChatColor.GREEN + "TPS: " + ChatColor.GRAY + (Math.round(Lag.getTPS() * 100.0D) / 100.0D) + ".");
+            sender.sendMessage(ChatColor.GREEN + "TPS: " + ChatColor.GRAY + Lag.getTPS() + ".");
             sender.sendMessage(" ");
             sender.sendMessage(ChatColor.GREEN + "Chunks carregadas: " + ChatColor.GRAY + Bukkit.getWorld(ConfigManager.world_name).getLoadedChunks().length + ".");
 

@@ -7,35 +7,41 @@ import org.bukkit.Bukkit;
  */
 public class Lag implements Runnable {
 
-    private static int TICK_COUNT= 0;
-    private static long[] TICKS= new long[600];
-    private static long LAST_TICK= 0L;
+    private static long mills;
+    private static double[] tpsArr = new double[10];
+    private static int index = 0;
 
     public static double getTPS()
     {
-        return getTPS(100);
-    }
-
-    public static double getRoundTPS() {
-        return Math.round(getTPS(100) * 100.0D) / 100.0D;
-    }
-
-    private static double getTPS(int ticks)
-    {
-        if (TICK_COUNT< ticks) {
-            return 20.0D;
+        double tpsSum = 0.0D;
+        for (double d : tpsArr) {
+            tpsSum += d;
         }
-        int target = (TICK_COUNT- 1 - ticks) % TICKS.length;
-        long elapsed = System.currentTimeMillis() - TICKS[target];
-
-        return ticks / (elapsed / 1000.0D);
+        return Math.round(tpsSum / 10.0D * 100.0D) / 100.0D;
     }
 
-    public void run()
-    {
-        TICKS[(TICK_COUNT% TICKS.length)] = System.currentTimeMillis();
+    public void run() {
+        if (this.mills > 0L) {
+            double diff = System.currentTimeMillis() - this.mills - 1000.0D;
+            if (diff < 0.0D) {
+                diff = Math.abs(diff);
+            }
+            double tps;
+            if (diff == 0.0D) {
+                tps = 20.0D;
+            } else {
+                tps = 20.0D - diff / 50.0D;
+            }
+            if (tps < 0.0D) {
+                tps = 0.0D;
+            }
+            tpsArr[(index++)] = tps;
+            if (index >= tpsArr.length) {
 
-        TICK_COUNT+= 1;
+                    index = 0;
+            }
+        }
+        mills = System.currentTimeMillis();
     }
 
 }
