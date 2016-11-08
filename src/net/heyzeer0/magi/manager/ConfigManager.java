@@ -37,6 +37,8 @@ public class ConfigManager {
         clear_chunk_entities = Main.main.getConfig().getBoolean("clear_chunk_entities");
         clear_chunk_entities_amount = Main.main.getConfig().getInt("clear_chunk_entities_amount");
 
+        min_tps = Main.main.getConfig().getDouble("min_tps");
+
         command = Main.main.getConfig().getString("command");
         String id = Main.main.getConfig().getString("item_ids");
 
