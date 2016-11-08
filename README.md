@@ -4,6 +4,7 @@
 - [x] AutoRestart.
 - [x] Drop cleaner on low TPS.
 - [x] Per chunk entity clear on low TPS.
+- [x] Item GUI blocker.
 - [x] Chunk debug.
 - [x] Simple configuration.
 

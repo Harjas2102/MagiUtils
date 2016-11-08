@@ -22,19 +22,9 @@ public class ComandoReload implements CommandExecutor {
                 return true;
             }
 
-            Bukkit.getServer().getScheduler().cancelTasks(Main.main);
-            try{
-                ConfigManager.loadConfig();
-                Main.registerTasks();
-                sender.sendMessage(ChatColor.GREEN + "Configs carregadas com sucesso, todas as tasks foram reiniciadas.");
-            }catch(Exception e) {
-                RestartTimer.startRestartCountdown();
-                sender.sendMessage(ChatColor.RED + "Erro ao carregar a config, desabilitando plugin.");
-                Bukkit.getPluginManager().disablePlugin(Main.main);
-            }
-
-
-
+            ConfigManager.loadConfig();
+            Main.registerTasks();
+            sender.sendMessage(ChatColor.GREEN + "Configs carregadas com sucesso, todas as tasks foram reiniciadas.");
         }
         return false;
     }

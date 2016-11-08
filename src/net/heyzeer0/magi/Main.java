@@ -4,6 +4,7 @@ import net.heyzeer0.magi.comandos.ComandoChunkDebug;
 import net.heyzeer0.magi.comandos.ComandoReload;
 import net.heyzeer0.magi.comandos.ComandoTPSInfo;
 import net.heyzeer0.magi.eventos.ChunkEvent;
+import net.heyzeer0.magi.eventos.PlayerEvent;
 import net.heyzeer0.magi.manager.ChunkManager;
 import net.heyzeer0.magi.manager.ConfigManager;
 import net.heyzeer0.magi.manager.Lag;
@@ -22,6 +23,7 @@ public class Main extends JavaPlugin {
 
     public void onEnable() {
         main = this;
+
         saveDefaultConfig();
 
         ConfigManager.loadConfig();
@@ -33,6 +35,7 @@ public class Main extends JavaPlugin {
         getCommand("tpsinfo").setExecutor(new ComandoTPSInfo());
 
         Bukkit.getPluginManager().registerEvents(new ChunkEvent(), this);
+        Bukkit.getPluginManager().registerEvents(new PlayerEvent(), this);
         ChunkManager.task();
     }
 
