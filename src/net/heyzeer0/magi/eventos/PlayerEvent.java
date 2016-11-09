@@ -17,16 +17,18 @@ public class PlayerEvent implements Listener {
 
     @EventHandler
     public void playerInteract(PlayerInteractEvent e) {
-        if(e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.LEFT_CLICK_BLOCK || e.getAction() == Action.RIGHT_CLICK_BLOCK) {
-            if(ConfigManager.ids.contains(e.getPlayer().getItemInHand().getTypeId())) {
-                e.setCancelled(true);
-                ItemStack i = e.getPlayer().getItemInHand();
-                e.getPlayer().setItemInHand(new ItemStack(Material.AIR));
-                new BukkitRunnable() {
-                    public void run() {
-                        e.getPlayer().setItemInHand(i);
-                    }
-                }.runTaskLaterAsynchronously(Main.main, 5);
+        if(e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK) {
+            if(e.getPlayer().getWorld().getName() != ConfigManager.world_name) {
+                if (ConfigManager.ids.contains(e.getPlayer().getItemInHand().getTypeId())) {
+                    e.setCancelled(true);
+                    ItemStack i = e.getPlayer().getItemInHand();
+                    e.getPlayer().setItemInHand(new ItemStack(Material.AIR));
+                    new BukkitRunnable() {
+                        public void run() {
+                            e.getPlayer().setItemInHand(i);
+                        }
+                    }.runTaskLaterAsynchronously(Main.main, 5);
+                }
             }
         }
     }
