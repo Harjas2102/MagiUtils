@@ -18,6 +18,7 @@ public class ConfigManager {
     public static String clear_drops_message_2 = "§b[§c§l!§b] Todos os drops foram limpos.";
 
     public static String world_name = "world";
+    public static String blocker_world_name = "world";
     public static String command = "asw restart";
     public static boolean clear_chunk_entities = true;
     public static Integer clear_chunk_entities_amount = 200;
@@ -30,6 +31,7 @@ public class ConfigManager {
 
         check_restart = Main.main.getConfig().getInt("restart_tick");
         world_name = Main.main.getConfig().getString("world_name");
+        blocker_world_name = Main.main.getConfig().getString("blocker_world_name");
         clear_drops = Main.main.getConfig().getBoolean("clear_drops");
         clear_drops_amount = Main.main.getConfig().getInt("clear_drops_amount");
         clear_drops_message = Main.main.getConfig().getString("clear_drops_message").replace("&", "§");
