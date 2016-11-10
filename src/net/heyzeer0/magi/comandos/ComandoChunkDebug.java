@@ -10,7 +10,9 @@ import org.bukkit.entity.Player;
 
 /**
  * Created by HeyZeer0 on 23/10/2016.
+ * Copyright © HeyZeer0 - 2016
  */
+
 public class ComandoChunkDebug implements CommandExecutor {
 
     @Override

@@ -8,7 +8,9 @@ import org.bukkit.event.world.ChunkUnloadEvent;
 
 /**
  * Created by HeyZeer0 on 24/10/2016.
+ * Copyright © HeyZeer0 - 2016
  */
+
 public class ChunkEvent implements Listener {
 
     @EventHandler

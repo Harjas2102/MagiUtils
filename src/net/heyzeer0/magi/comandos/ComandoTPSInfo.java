@@ -13,7 +13,9 @@ import org.bukkit.entity.LivingEntity;
 
 /**
  * Created by HeyZeer0 on 30/10/2016.
+ * Copyright © HeyZeer0 - 2016
  */
+
 public class ComandoTPSInfo implements CommandExecutor {
 
 

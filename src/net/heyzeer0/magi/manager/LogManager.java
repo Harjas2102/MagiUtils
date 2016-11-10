@@ -1,14 +1,17 @@
 package net.heyzeer0.magi.manager;
 
-/**
- * Created by HeyZeer0 on 24/10/2016.
- */
 import net.heyzeer0.magi.Main;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+
+/**
+ * Created by HeyZeer0 on 24/10/2016.
+ * Copyright © HeyZeer0 - 2016
+ */
+
 
 public class LogManager {
 

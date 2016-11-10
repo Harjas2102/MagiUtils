@@ -9,12 +9,14 @@ import java.util.HashMap;
 
 /**
  * Created by HeyZeer0 on 24/10/2016.
+ * Copyright © HeyZeer0 - 2016
  */
+
 public class ChunkManager {
 
     public static boolean ativo = false;
-    public static HashMap<Chunk, Integer> loaded = new HashMap<Chunk, Integer>();
-    public static HashMap<Chunk, Integer> unloaded = new HashMap<Chunk, Integer>();
+    private static HashMap<Chunk, Integer> loaded = new HashMap<>();
+    private static HashMap<Chunk, Integer> unloaded = new HashMap<>();
 
     public static void addChunkLoaded(Chunk k) {
         if(loaded.containsKey(k)) {
@@ -32,7 +34,7 @@ public class ChunkManager {
         }
     }
 
-    public static void broadcastList() {
+    private static void broadcastList() {
         if(loaded != null) {
             LogManager.logToFile("CHUNK LOADED:");
             LogManager.logToFile("#Format = X: $x Z= $z [$loaded_amount] [$unloaded_amount]");

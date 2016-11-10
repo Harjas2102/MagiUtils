@@ -9,7 +9,9 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 /**
  * Created by HeyZeer0 on 24/10/2016.
+ * Copyright © HeyZeer0 - 2016
  */
+
 public class DropTimer {
 
     public static void startCounting() {

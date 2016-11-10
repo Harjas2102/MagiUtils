@@ -2,8 +2,6 @@ package net.heyzeer0.magi.comandos;
 
 import net.heyzeer0.magi.Main;
 import net.heyzeer0.magi.manager.ConfigManager;
-import net.heyzeer0.magi.tasks.RestartTimer;
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -11,7 +9,9 @@ import org.bukkit.command.CommandSender;
 
 /**
  * Created by HeyZeer0 on 23/10/2016.
+ * Copyright © HeyZeer0 - 2016
  */
+
 public class ComandoReload implements CommandExecutor {
 
     @Override

@@ -1,9 +1,8 @@
 package net.heyzeer0.magi.manager;
 
-import org.bukkit.Bukkit;
-
 /**
  * Created by HeyZeer0 on 30/10/2016.
+ * Copyright © HeyZeer0 - 2016
  */
 public class Lag implements Runnable {
 
@@ -21,8 +20,8 @@ public class Lag implements Runnable {
     }
 
     public void run() {
-        if (this.mills > 0L) {
-            double diff = System.currentTimeMillis() - this.mills - 1000.0D;
+        if (mills > 0L) {
+            double diff = System.currentTimeMillis() - mills - 1000.0D;
             if (diff < 0.0D) {
                 diff = Math.abs(diff);
             }
@@ -43,5 +42,6 @@ public class Lag implements Runnable {
         }
         mills = System.currentTimeMillis();
     }
+
 
 }

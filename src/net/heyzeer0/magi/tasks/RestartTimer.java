@@ -7,41 +7,44 @@ import org.bukkit.Bukkit;
 import org.bukkit.Chunk;
 import org.bukkit.entity.*;
 import org.bukkit.scheduler.BukkitRunnable;
+import org.bukkit.scheduler.BukkitTask;
 
 import java.util.ArrayList;
 
 /**
  * Created by HeyZeer0 on 23/10/2016.
+ * Copyright © HeyZeer0 - 2016
  */
+
 public class RestartTimer {
 
     public static ArrayList<Item> items = new ArrayList<>();
     public static Integer item_amount = 0;
 
     public static void startRestartCountdown() {
-        new BukkitRunnable() {
+        BukkitTask bukkitTask = new BukkitRunnable() {
             public void run() {
 
-                if(Lag.getTPS() <= ConfigManager.min_tps) {
-                    if(ConfigManager.clear_drops) {
-                        for(Entity i : Bukkit.getWorld(ConfigManager.world_name).getEntities()) {
-                            if(i instanceof Item) {
-                                items.add((Item)i);
+                if (Lag.getTPS() <= ConfigManager.min_tps) {
+                    if (ConfigManager.clear_drops) {
+                        for (Entity i : Bukkit.getWorld(ConfigManager.world_name).getEntities()) {
+                            if (i instanceof Item) {
+                                items.add((Item) i);
                                 item_amount++;
                             }
                         }
-                        if(items != null && ConfigManager.clear_drops_amount >= item_amount) {
+                        if (items != null && ConfigManager.clear_drops_amount >= item_amount) {
                             DropTimer.startCounting();
                         }
                     }
 
-                    if(ConfigManager.clear_chunk_entities) {
-                        for(Chunk k : Bukkit.getWorld(ConfigManager.world_name).getLoadedChunks()) {
-                            if(k.getEntities().length >= ConfigManager.clear_chunk_entities_amount) {
-                                for(Entity i : k.getEntities()) {
-                                    if(!(i instanceof Player)) {
-                                        if(i instanceof LivingEntity && !(i instanceof Minecart)) {
-                                            if(((LivingEntity)i).getCustomName() == null || ((LivingEntity)i).getCustomName() != "") {
+                    if (ConfigManager.clear_chunk_entities) {
+                        for (Chunk k : Bukkit.getWorld(ConfigManager.world_name).getLoadedChunks()) {
+                            if (k.getEntities().length >= ConfigManager.clear_chunk_entities_amount) {
+                                for (Entity i : k.getEntities()) {
+                                    if (!(i instanceof Player)) {
+                                        if (i instanceof LivingEntity && !(i instanceof Minecart)) {
+                                            if (((LivingEntity) i).getCustomName() == null || ((LivingEntity) i).getCustomName() != "") {
                                                 i.remove();
                                             }
                                         }
@@ -53,7 +56,7 @@ public class RestartTimer {
                     }
 
                     startSecondCountdown();
-                }else{
+                } else {
                     startRestartCountdown();
                 }
 

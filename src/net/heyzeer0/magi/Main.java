@@ -15,7 +15,9 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 /**
  * Created by HeyZeer0 on 23/10/2016.
+ * Copyright © HeyZeer0 - 2016
  */
+
 public class Main extends JavaPlugin {
 
     public static Main main;

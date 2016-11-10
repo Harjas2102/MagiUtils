@@ -32,12 +32,15 @@ clear_chunk_entities: true
 clear_chunk_entities_amount: 120
 
 #|--------------------------|
-#| Configurações e Bloqueio |
+#| Configuração de Bloqueio |
 #|--------------------------|
+
+# Defina abaixo os mundos que serão bloqueados.
+# Padrão: DIM-1,DIM-2
+blocked_worlds: 'DIM-1,DIM-2'
 
 # Defina abaixo as ids de items que respectivas GUI's serão bloqueadas.
 # Padrão: 4124,4123
-blocker_world_name: 'DIM-37'
 item_ids: '4124,4123'
 
 #|--------------------------|
