@@ -22,7 +22,7 @@ public class RestartTimer {
     public static Integer item_amount = 0;
 
     public static void startRestartCountdown() {
-        BukkitTask bukkitTask = new BukkitRunnable() {
+        new BukkitRunnable() {
             public void run() {
 
                 if (Lag.getTPS() <= ConfigManager.min_tps) {
