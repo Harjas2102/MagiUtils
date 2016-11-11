@@ -38,7 +38,6 @@ public class Main extends JavaPlugin {
 
         Bukkit.getPluginManager().registerEvents(new ChunkEvent(), this);
         Bukkit.getPluginManager().registerEvents(new PlayerEvent(), this);
-        ChunkManager.task();
     }
 
     public static void registerTasks() {

@@ -39,7 +39,7 @@ public class PlayerEvent implements Listener {
     @EventHandler
     public void onInteract(PlayerInteractEvent e) {
         if (e.getAction() == Action.RIGHT_CLICK_BLOCK && e.getClickedBlock() != null) {
-            if (("" + e.getClickedBlock().getTypeId()).equals(ConfigManager.echest)) {
+            if (("" + e.getClickedBlock().getTypeId()).equals(ConfigManager.echest.split(":")[0])) {
                 double y = e.getPlayer().getLocation().getY();
                 double n = (y * 10) % 10; // 0.x
 

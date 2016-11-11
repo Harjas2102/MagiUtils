@@ -30,7 +30,7 @@ public class ConfigManager {
     public static List<Integer> ids = new ArrayList<>();
     public static List<String> mundos = new ArrayList<>();
 
-    public static Integer echest = 12;
+    public static String echest = "12";
 
     public static void loadConfig() {
         Main.main.reloadConfig();
@@ -49,7 +49,7 @@ public class ConfigManager {
         command = Main.main.getConfig().getString("command").replace("/", "");
 
         //duplications
-        echest = Main.main.getConfig().getInt("eletrical_chest_id");
+        echest = Main.main.getConfig().getString("eletrical_chest_id");
 
         //item gui blocker
         ids.clear();
