@@ -14,6 +14,7 @@ import java.util.List;
 
 public class ConfigManager {
 
+    public static boolean restart_enabled = true;
     public static Integer check_restart = 12000;
     public static boolean clear_drops = true;
     public static Integer clear_drops_amount = 1000;
@@ -35,6 +36,7 @@ public class ConfigManager {
         Main.main.reloadConfig();
 
         //restart
+        restart_enabled = Main.main.getConfig().getBoolean("restart_boolean");
         check_restart = Main.main.getConfig().getInt("restart_tick");
         world_name = Main.main.getConfig().getString("world_name");
         clear_drops = Main.main.getConfig().getBoolean("clear_drops");
@@ -44,7 +46,7 @@ public class ConfigManager {
         clear_chunk_entities = Main.main.getConfig().getBoolean("clear_chunk_entities");
         clear_chunk_entities_amount = Main.main.getConfig().getInt("clear_chunk_entities_amount");
         min_tps = Main.main.getConfig().getDouble("min_tps");
-        command = Main.main.getConfig().getString("command");
+        command = Main.main.getConfig().getString("command").replace("/", "");
 
         //duplications
         echest = Main.main.getConfig().getInt("eletrical_chest_id");

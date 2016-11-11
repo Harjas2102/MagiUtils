@@ -43,7 +43,10 @@ public class Main extends JavaPlugin {
 
     public static void registerTasks() {
         RestartTimer.startRestartCountdown();
-        Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(main, new Lag(), 120L, 20L);
+
+        if(ConfigManager.restart_enabled) {
+            Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(main, new Lag(), 120L, 20L);
+        }
     }
 
     public void onDisable() {

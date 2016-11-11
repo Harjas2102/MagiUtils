@@ -3,31 +3,34 @@
 #| Configurações de Restart |
 #|--------------------------|
 
+# Defina abaixo se o modulo de reinicio estara ativo.
+# Padrão: world
+restart_boolean: true
+
 # Defina abaixo o nome do mundo para as checagens.
 # Padrão: world
 world_name: 'world'
 
 # Defina abaixo o comando para ser executado para reiniciar.
-# NÃO UTILIZE BARRA (/).
 # Padrão: asw restart
 command: 'asw restart'
 
-# Defina abaixo o valor minimo de tps.
+# Defina abaixo o valor minímo de tps.
 # Padrão: 16.0
 min_tps: 16.0
 
-# Abaixo defina a quantidade em ticks para a checagem do tps e reinicio.
+# Abaixo defina o tempo em ticks para cada checagem de tps.
 # Padrão: 12000 ( 10 minutos, 20*60*10 ).
 restart_tick: 12000
 
-# Abaixo defina se ira ocorrer a limpeza de drops e a quantidade minima ( quando detectar tps baixo ).
-# Isto serve para que se o lag for devido a items dropados, se eles forem removidos o tps voltara ficar maior que 16.
+# Abaixo defina se ira ocorrer a limpeza de drops e a quantidade miníma ( quando detectar tps baixo ).
+# Isto serve para que se o lag for devido a items dropados, se eles forem removidos o tps voltara a ficar maior que 16.
 # Padrão: clear_drops: true | clear_drops_amount: 1000 ( ele checara e se o valor for maior ou igual a mil ele limpara ).
 clear_drops: true
 clear_drops_amount: 1000
 
-# Abaixo defina se ira ocorrer a limpeza de LivingEntities por chunk e a quantidade minima ( quando detectar tps baixo ).
-# Isto serve para que se o lag for devido a entidades, se eles forem removidos o tps voltara ficar maior que 16.
+# Abaixo defina se ira ocorrer a limpeza de LivingEntities por chunk e a quantidade miníma ( quando detectar tps baixo ).
+# Isto serve para que se o lag for devido a entidades, se eles forem removidos o tps voltara a ficar maior que 16.
 clear_chunk_entities: true
 clear_chunk_entities_amount: 120
 
@@ -35,11 +38,12 @@ clear_chunk_entities_amount: 120
 #| Configuração de Bloqueio |
 #|--------------------------|
 
-# Defina abaixo os mundos que serão bloqueados.
+# Defina abaixo os mundos que serão abrangido pelas configurações abaixo.
 # Padrão: DIM-1,DIM-2
 blocked_worlds: 'DIM-1,DIM-2'
 
-# Defina abaixo a id do Eletrical Chest
+# Defina abaixo a id do Eletrical Chest.
+# OBS: Esta configuração é UNIVERSAL, ou seja, não é afetada pela configuração acima.
 # Padrão: 12
 eletrical_chest_id: 12
 
@@ -50,9 +54,10 @@ item_ids: '4124,4123'
 #|--------------------------|
 #|        MENSAGENS         |
 #|--------------------------|
-# Você pode utilizar codigo de cores como &4 para vermelho.
+# Você pode utilizar codigo de cores.
+# Ex: &4 = vermelho
 
-# Defina as mensagens para a limpeza de drops.
+# Defina a mensagem para a limpeza de drops.
 # Variaveis: $s = segundos restantes
 # Padrao: &b[&c&l!&b] Limpando os drops em &c&l$s segundos&b.
 # Padrao: &b[&c&l!&b] Todos os drops foram limpos.
