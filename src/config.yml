@@ -39,6 +39,10 @@ clear_chunk_entities_amount: 120
 # Padrão: DIM-1,DIM-2
 blocked_worlds: 'DIM-1,DIM-2'
 
+# Defina abaixo a id do Eletrical Chest
+# Padrão: 12
+eletrical_chest_id: 12
+
 # Defina abaixo as ids de items que respectivas GUI's serão bloqueadas.
 # Padrão: 4124,4123
 item_ids: '4124,4123'

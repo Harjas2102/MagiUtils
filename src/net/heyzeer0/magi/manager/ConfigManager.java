@@ -29,6 +29,8 @@ public class ConfigManager {
     public static List<Integer> ids = new ArrayList<>();
     public static List<String> mundos = new ArrayList<>();
 
+    public static Integer echest = 12;
+
     public static void loadConfig() {
         Main.main.reloadConfig();
 
@@ -43,6 +45,9 @@ public class ConfigManager {
         clear_chunk_entities_amount = Main.main.getConfig().getInt("clear_chunk_entities_amount");
         min_tps = Main.main.getConfig().getDouble("min_tps");
         command = Main.main.getConfig().getString("command");
+
+        //duplications
+        echest = Main.main.getConfig().getInt("eletrical_chest_id");
 
         //item gui blocker
         ids.clear();
