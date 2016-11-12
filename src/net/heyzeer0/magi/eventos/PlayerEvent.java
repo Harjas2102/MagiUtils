@@ -6,9 +6,11 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Item;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
+import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.scheduler.BukkitRunnable;
@@ -18,6 +20,18 @@ import org.bukkit.scheduler.BukkitRunnable;
  * Copyright © HeyZeer0 - 2016
  */
 public class PlayerEvent implements Listener {
+
+    @EventHandler
+    public void click(InventoryClickEvent e) {
+        if(e.getWhoClicked().getOpenInventory().getTopInventory() != null) {
+            if(e.getWhoClicked().getOpenInventory().getTopInventory().getTitle().contains("Fluid Tank")) {
+                if(e.isShiftClick()) {
+                    e.setCancelled(true);
+                    ((Player)e.getWhoClicked()).sendMessage(ChatColor.RED + "Desculpe, você não pode utilizar shift click neste inventário.");
+                }
+            }
+        }
+    }
 
     @EventHandler
     public void playerInteract(PlayerInteractEvent e) {
