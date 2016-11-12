@@ -2,6 +2,7 @@ package net.heyzeer0.magi.eventos;
 
 import net.heyzeer0.magi.Main;
 import net.heyzeer0.magi.manager.ConfigManager;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Item;
@@ -44,15 +45,18 @@ public class PlayerEvent implements Listener {
             }
             if (convertToCompleteID(e.getItem()).equals(ConfigManager.echest)) {
                 Integer amount = 0;
+
                 for(int i = 0; i < 8; i++) {
-                    if(convertToCompleteID(e.getPlayer().getInventory().getItem(i)).equals(ConfigManager.echest)) {
-                        amount++;
+                    if(e.getPlayer().getInventory().getItem(i) != null && e.getPlayer().getInventory().getItem(i).getType() != Material.AIR) {
+                        if(convertToCompleteID(e.getPlayer().getInventory().getItem(i)).equals(ConfigManager.echest)) {
+                            amount++;
+                        }
                     }
                 }
 
                 if(amount > 1) {
                     e.setCancelled(true);
-                    e.getPlayer().sendMessage(ChatColor.RED + "Desculpe, você não pode abrir este item com 2 na hotbar.");
+                    e.getPlayer().sendMessage(ChatColor.RED + "Desculpe, você não pode abrir este item com " + amount + " na hotbar.");
 
                     ItemStack i = e.getItem();
                     e.getPlayer().setItemInHand(new ItemStack(Material.AIR));
