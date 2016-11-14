@@ -3,6 +3,7 @@ package net.heyzeer0.magi;
 import net.heyzeer0.magi.comandos.ComandoChunkDebug;
 import net.heyzeer0.magi.comandos.ComandoReload;
 import net.heyzeer0.magi.comandos.ComandoTPSInfo;
+import net.heyzeer0.magi.eventos.BlockEvent;
 import net.heyzeer0.magi.eventos.ChunkEvent;
 import net.heyzeer0.magi.eventos.PlayerEvent;
 import net.heyzeer0.magi.manager.ChunkManager;
@@ -38,6 +39,7 @@ public class Main extends JavaPlugin {
 
         Bukkit.getPluginManager().registerEvents(new ChunkEvent(), this);
         Bukkit.getPluginManager().registerEvents(new PlayerEvent(), this);
+        Bukkit.getPluginManager().registerEvents(new BlockEvent(), this);
     }
 
     public static void registerTasks() {

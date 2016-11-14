@@ -31,6 +31,8 @@ public class ConfigManager {
     public static List<String> mundos = new ArrayList<>();
 
     public static String echest = "12";
+    public static Integer armorstand = 731;
+    public static Integer arcane = 750;
 
     public static void loadConfig() {
         Main.main.reloadConfig();
@@ -50,6 +52,8 @@ public class ConfigManager {
 
         //duplications
         echest = Main.main.getConfig().getString("eletrical_chest_id");
+        armorstand = Main.main.getConfig().getInt("armorstand_id");
+        arcane = Main.main.getConfig().getInt("arcanewrk_id");
 
         //item gui blocker
         ids.clear();

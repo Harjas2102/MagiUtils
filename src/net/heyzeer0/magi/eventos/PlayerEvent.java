@@ -24,7 +24,9 @@ public class PlayerEvent implements Listener {
     @EventHandler
     public void click(InventoryClickEvent e) {
         if(e.getWhoClicked().getOpenInventory().getTopInventory() != null) {
-            if(e.getWhoClicked().getOpenInventory().getTopInventory().getTitle().contains("Fluid Tank")) {
+            if(e.getWhoClicked().getOpenInventory().getTopInventory().getTitle().contains("Fluid Tank")
+                    || e.getWhoClicked().getOpenInventory().getTopInventory().getTitle().contains("Market")
+                    || e.getWhoClicked().getOpenInventory().getTopInventory().getTitle().contains("Chemical Washer")) {
                 if(e.isShiftClick()) {
                     e.setCancelled(true);
                     ((Player)e.getWhoClicked()).sendMessage(ChatColor.RED + "Desculpe, você não pode utilizar shift click neste inventário.");
