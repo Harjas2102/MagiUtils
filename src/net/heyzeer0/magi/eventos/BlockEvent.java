@@ -19,8 +19,8 @@ public class BlockEvent implements Listener {
     @EventHandler
     public void place(BlockPlaceEvent e) {
         if(e.getBlock().getLocation().clone().add(0, 1, 0).getBlock() != null) {
-            if (e.getBlock().getLocation().clone().add(0, 1, 0).getBlock().getTypeId() == ConfigManager.armorstand) {
-                if(e.getBlock().getTypeId() == ConfigManager.arcane) {
+            if (e.getBlock().getLocation().clone().add(0, 1, 0).getBlock().getType().toString().equalsIgnoreCase("BIBLIOCRAFT_ARMOR_STAND")) {
+                if(e.getBlock().getType().toString().equalsIgnoreCase("THAUMCRAFT_BLOCKTABLE")) {
                     e.getBlock().setType(Material.AIR);
                     e.getPlayer().sendMessage(ChatColor.RED + "Desculpe, esta ação esta bloqueada.");
                 }

@@ -47,12 +47,6 @@ blocked_worlds: 'DIM-1,DIM-2'
 # Padrão: 226:13
 eletrical_chest_id: '226:13'
 
-# Defina abaixo a id do Armor Stand do Bibliocraft e da mesa arcana.
-# OBS: Esta configuração é UNIVERSAL, ou seja, não é afetada pela configuração de mundo.
-# Padrão: 731, 750 (se possuir : ignore)
-armorstand_id: 731
-arcanewrk_id: 750
-
 # Defina abaixo as ids de items que respectivas GUI's serão bloqueadas.
 # Padrão: 4124,4123
 item_ids: '4124,4123'
