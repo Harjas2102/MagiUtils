@@ -33,7 +33,7 @@ public class ConfigManager {
     public static String echest = "12";
 
     public static Integer advertising_ticks = 12000;
-    public static String advertising_action = "comando: loja";
+    public static List<String> advertising_action = new ArrayList<>();
     public static boolean advertising_boolean = true;
 
     public static void loadConfig() {
@@ -54,7 +54,13 @@ public class ConfigManager {
 
         //advertising
         advertising_ticks = Main.main.getConfig().getInt("advertising_tick");
-        advertising_action = Main.main.getConfig().getString("advertising_action").replace("/", "").replace("&", "§");
+
+        if(Main.main.getConfig().getString("advertising_action").contains(",")) {
+            Collections.addAll(advertising_action, Main.main.getConfig().getString("advertising_action").split(","));
+        }else{
+            advertising_action.add(Main.main.getConfig().getString("advertising_action"));
+        }
+
         advertising_boolean = Main.main.getConfig().getBoolean("enable_advertising");
 
 

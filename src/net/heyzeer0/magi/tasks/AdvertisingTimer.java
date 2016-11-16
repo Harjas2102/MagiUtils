@@ -18,11 +18,27 @@ public class AdvertisingTimer {
 
                 for(Player p : Bukkit.getOnlinePlayers()) {
                     if(!p.hasPermission("magiutils.isento")) {
-                        if (ConfigManager.advertising_action.contains("comando: ")) {
-                            Bukkit.dispatchCommand(p, ConfigManager.advertising_action.replace("comando: ", ""));
-                        } else if (ConfigManager.advertising_action.contains("mensagem: ")) {
-                            p.sendMessage(ConfigManager.advertising_action.replace("mensagem: ", ""));
+
+                        if(ConfigManager.advertising_action.size() > 1) {
+                            for(String i : ConfigManager.advertising_action) {
+                                if (i.contains("comando: ")) {
+                                    Bukkit.dispatchCommand(p, i.replace("comando: ", "").replace("/", ""));
+                                } else if (i.contains("mensagem: ")) {
+                                    p.sendMessage(i.replace("mensagem: ", "").replace("&", "§"));
+                                }
+                            }
+                        }else{
+                            String i = ConfigManager.advertising_action.get(0);
+                            if (i.contains("comando: ")) {
+                                Bukkit.dispatchCommand(p, i.replace("comando: ", "").replace("/", ""));
+                            } else if (i.contains("mensagem: ")) {
+                                p.sendMessage(i.replace("mensagem: ", "").replace("&", "§"));
+                            }
                         }
+
+
+
+
                     }
                 }
 
@@ -31,7 +47,7 @@ public class AdvertisingTimer {
                 }
 
             }
-        }.runTaskLaterAsynchronously(Main.main, ConfigManager.advertising_ticks);
+        }.runTaskLater(Main.main, ConfigManager.advertising_ticks);
     }
 
 
