@@ -9,6 +9,7 @@ import net.heyzeer0.magi.eventos.PlayerEvent;
 import net.heyzeer0.magi.manager.ChunkManager;
 import net.heyzeer0.magi.manager.ConfigManager;
 import net.heyzeer0.magi.manager.Lag;
+import net.heyzeer0.magi.tasks.AdvertisingTimer;
 import net.heyzeer0.magi.tasks.RestartTimer;
 import org.bukkit.Bukkit;
 import org.bukkit.event.HandlerList;
@@ -47,6 +48,9 @@ public class Main extends JavaPlugin {
 
         if(ConfigManager.restart_enabled) {
             Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(main, new Lag(), 120L, 20L);
+        }
+        if(ConfigManager.advertising_boolean) {
+            AdvertisingTimer.runAdvertising();
         }
     }
 

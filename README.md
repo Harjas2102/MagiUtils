@@ -7,6 +7,7 @@
 - [x] Item GUI blocker.
 - [x] Chunk debug.
 - [x] Simple configuration.
+- [x] Advertising system.
 
 | Command | Permission | Description |
 | --- | --- | --- |

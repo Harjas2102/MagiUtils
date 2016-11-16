@@ -32,6 +32,10 @@ public class ConfigManager {
 
     public static String echest = "12";
 
+    public static Integer advertising_ticks = 12000;
+    public static String advertising_action = "comando: loja";
+    public static boolean advertising_boolean = true;
+
     public static void loadConfig() {
         Main.main.reloadConfig();
 
@@ -47,6 +51,12 @@ public class ConfigManager {
         clear_chunk_entities_amount = Main.main.getConfig().getInt("clear_chunk_entities_amount");
         min_tps = Main.main.getConfig().getDouble("min_tps");
         command = Main.main.getConfig().getString("command").replace("/", "");
+
+        //advertising
+        advertising_ticks = Main.main.getConfig().getInt("advertising_tick");
+        advertising_action = Main.main.getConfig().getString("advertising_action").replace("/", "").replace("&", "§");
+        advertising_boolean = Main.main.getConfig().getBoolean("enable_advertising");
+
 
         //duplications
         echest = Main.main.getConfig().getString("eletrical_chest_id");

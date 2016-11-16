@@ -20,6 +20,7 @@ command: 'asw restart'
 min_tps: 16.0
 
 # Abaixo defina o tempo em ticks para cada checagem de tps.
+# OBS: 1s = 20 ticks
 # Padrão: 12000 ( 10 minutos, 20*60*10 ).
 restart_tick: 12000
 
@@ -50,6 +51,25 @@ eletrical_chest_id: '226:13'
 # Defina abaixo as ids de items que respectivas GUI's serão bloqueadas.
 # Padrão: 4124,4123
 item_ids: '4124,4123'
+
+#|----------------------------|
+#| Configuração de Dilvugação |
+#|----------------------------|
+
+# Defina abaixo se a divulgação estara ativa.
+# Padrão: true
+enable_advertising: true
+
+# Defina abaixo a quantidade em ticks para cada ação.
+# OBS: 1s = 20 ticks.
+# Padrão: 12000 ( 10 minutos, 20*60*10 ).
+advertising_tick: 12000
+
+# Defina abaixo a ação da divulgação.
+# Parametros: comando: {valor} ou mensagem: {valor}
+# Padrão: comando: loja
+advertising_action: 'comando: loja'
+
 
 #|--------------------------|
 #|        MENSAGENS         |
