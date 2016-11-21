@@ -23,8 +23,8 @@ public class ConfigManager {
 
     public static String world_name = "world";
     public static String command = "asw restart";
-    public static boolean clear_chunk_entities = true;
-    public static Integer clear_chunk_entities_amount = 200;
+    public static boolean clear_entities = true;
+    public static Integer clear_entities_amount = 200;
 
     public static double min_tps = 16.0;
     public static List<Integer> ids = new ArrayList<>();
@@ -47,8 +47,8 @@ public class ConfigManager {
         clear_drops_amount = Main.main.getConfig().getInt("clear_drops_amount");
         clear_drops_message = Main.main.getConfig().getString("clear_drops_message").replace("&", "§");
         clear_drops_message_2 = Main.main.getConfig().getString("clear_drops_message_2").replace("&", "§");
-        clear_chunk_entities = Main.main.getConfig().getBoolean("clear_chunk_entities");
-        clear_chunk_entities_amount = Main.main.getConfig().getInt("clear_chunk_entities_amount");
+        clear_entities = Main.main.getConfig().getBoolean("clear_entities");
+        clear_entities_amount = Main.main.getConfig().getInt("clear_entities_amount");
         min_tps = Main.main.getConfig().getDouble("min_tps");
         command = Main.main.getConfig().getString("command").replace("/", "");
 

@@ -40,8 +40,7 @@ public class DropTimer {
                 if (count <= 0) {
                     this.cancel();
                     Bukkit.broadcastMessage(ConfigManager.clear_drops_message_2);
-                    Bukkit.getLogger().info("[MagiUtils] Foram removidos " + RestartTimer.item_amount + " drops do chão.");
-                    RestartTimer.item_amount = 0;
+                    Bukkit.getLogger().info("[MagiUtils] Foram removidos " + RestartTimer.items.size() + " drops do chão.");
                     for (Item i : RestartTimer.items) {
                         i.remove();
                     }

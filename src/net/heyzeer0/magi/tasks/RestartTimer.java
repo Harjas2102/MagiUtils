@@ -19,38 +19,37 @@ import java.util.ArrayList;
 public class RestartTimer {
 
     public static ArrayList<Item> items = new ArrayList<>();
-    public static Integer item_amount = 0;
+    private static ArrayList<LivingEntity> entidades = new ArrayList<LivingEntity>();
 
     public static void startRestartCountdown() {
         new BukkitRunnable() {
             public void run() {
 
                 if (Lag.getTPS() <= ConfigManager.min_tps) {
-                    if (ConfigManager.clear_drops) {
+
+                    if (ConfigManager.clear_drops || ConfigManager.clear_entities) {
+
                         for (Entity i : Bukkit.getWorld(ConfigManager.world_name).getEntities()) {
                             if (i instanceof Item) {
                                 items.add((Item) i);
-                                item_amount++;
+                            }else if(i instanceof LivingEntity) {
+                                if(((LivingEntity)i).getCustomName() == null) {
+                                    entidades.add((LivingEntity)i);
+                                }
                             }
                         }
-                        if (items != null && ConfigManager.clear_drops_amount >= item_amount) {
-                            DropTimer.startCounting();
-                        }
-                    }
-
-                    if (ConfigManager.clear_chunk_entities) {
-                        for (Chunk k : Bukkit.getWorld(ConfigManager.world_name).getLoadedChunks()) {
-                            if (k.getEntities().length >= ConfigManager.clear_chunk_entities_amount) {
-                                for (Entity i : k.getEntities()) {
-                                    if (!(i instanceof Player)) {
-                                        if (i instanceof LivingEntity && !(i instanceof Minecart)) {
-                                            if (((LivingEntity) i).getCustomName() == null || ((LivingEntity) i).getCustomName() != "") {
-                                                i.remove();
-                                            }
-                                        }
-                                    }
+                        if(ConfigManager.clear_entities) {
+                            if(entidades != null && entidades.size() >= ConfigManager.clear_entities_amount) {
+                                for(LivingEntity i : entidades) {
+                                    i.remove();
                                 }
-                                Bukkit.getLogger().info("[MagiUtils] Foram removidos " + k.getEntities().length + " entidades do chunk X: " + k.getX() + " Z: " + k.getZ());
+                                Bukkit.getLogger().info("[MagiUtils] Foram removidas " + entidades.size() + " entidades.");
+                                entidades.clear();
+                            }
+                        }
+                        if(ConfigManager.clear_drops) {
+                            if (items != null && items.size() >= ConfigManager.clear_drops_amount) {
+                                DropTimer.startCounting();
                             }
                         }
                     }
