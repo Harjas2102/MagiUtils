@@ -15,6 +15,7 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.event.inventory.InventoryOpenEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.scheduler.BukkitRunnable;
@@ -97,6 +98,12 @@ public class PlayerEvent implements Listener {
             }
         }
     }
+
+    @EventHandler
+    public void join(PlayerJoinEvent e) {
+        e.getPlayer().sendMessage(ChatColor.GOLD + "Este servidor esta utilizando o MagiUtilities, para mais iformações acesse www.magitechserver.com .");
+    }
+
 
     public String convertToCompleteID(ItemStack item) {
         return item.getTypeId() + ":" + item.getDurability();

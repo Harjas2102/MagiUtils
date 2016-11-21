@@ -35,10 +35,6 @@ public class AdvertisingTimer {
                                 p.sendMessage(i.replace("mensagem: ", "").replace("&", "§"));
                             }
                         }
-
-
-
-
                     }
                 }
 
