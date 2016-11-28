@@ -1,0 +1,89 @@
+***If you are using this english version, delete plugin.yml, & rename this file to plugin.yml***
+
+# | -------------------------- |
+# | Restart Settings |
+# | -------------------------- |
+
+# Set below if the reset module is active.
+# Default: world
+Restart_boolean: true
+
+# Set the world name for the checks below.
+# Default: world
+World_name: 'world'
+
+# Define the command to run to restart.
+# Default: asw restart
+Command: 'asw restart'
+
+# Set the minimum value of tps below.
+# Default: 16.0
+Min_tps: 16.0
+
+# Set the time in ticks for each tps check.
+# OBS: 1s = 20 ticks
+# Default: 12,000 (10 minutes, 20 * 60 * 10).
+Restart_tick: 12000
+
+# Define if you are going to clean the drops and the minimum amount (when low tps is detected).
+# This is so that if the lag is due to dropped items, if they are removed the tps will be higher than 16.
+# Default: clear_drops: true | Clear_drops_amount: 1000 (it checks and if the value is greater than or equal to one thousand it will clean).
+Clear_drops: true
+Clear_drops_amount: 1000
+
+# Define if the cleaning of LivingEntities and the minimum amount will occur (when low tps is detected).
+# This is so that if the lag is due to entities, if they are removed then the tps will be higher than 16.
+Clear_entities: true
+Clear_entities_amount: 800
+
+# | -------------------------- |
+# | Lock Configuration |
+# | -------------------------- |
+
+# Set below the worlds that will be covered by the settings below.
+# Default: DIM-1, DIM-2
+Blocked_worlds: 'DIM-1, DIM-2'
+
+# Set the id of the Eletrical Chest below.
+# NOTE: This setting is UNIVERSAL, that is, not affected by the world setting.
+# Default: 226: 13
+Eletrical_chest_id: '226: 13'
+
+# Define below the ids of items that their GUIs will block.
+# Default: 4124.4123
+Item_ids: '4124,4123'
+
+# | ----------------------------- |
+# | Dilvation Configuration |
+# | ---------------------------- |
+
+# Define below if the disclosure will be active.
+# Default: true
+Enable_advertising: true
+
+# Set the tick amount for each share below.
+# OBS: 1s = 20 ticks.
+# Default: 12,000 (10 minutes, 20 * 60 * 10).
+Advertising_tick: 12000
+
+# Define the disclosure action below.
+# Parameters: command: {value} or message: {value}
+# Default: command: store
+Advertising_action: 'command: store'
+
+
+# | -------------------------- |
+# | MESSAGES |
+# | -------------------------- |
+# You can use color code.
+# Ex: & 4 = red
+
+# Set the message for cleaning drops.
+# Variables: $ s = seconds remaining
+# Padrao: & b [& c & l! & B] Cleaning the drops in & c & ls seconds & b.
+# Padrao: & b [& c & l! & B] All drops have been cleaned.
+Clear_drops_message: '& b [& c & l! & B] Clearing the drops in & c & ls seconds & b.'
+Clear_drops_message_2: '& b [& c & l! & B] All drops have been cleaned.'
+
+
+# **** End of Settings ****
